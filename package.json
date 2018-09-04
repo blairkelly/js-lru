@@ -1,0 +1,22 @@
+{
+  "name": "js-lru",
+  "version": "1.0.0",
+  "description": "JS Least-Recently Used Cache",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blairkelly/js-lru.git"
+  },
+  "author": "Blair Kelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blairkelly/js-lru/issues"
+  },
+  "homepage": "https://github.com/blairkelly/js-lru#readme",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
+}
