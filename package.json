@@ -2,7 +2,7 @@
   "name": "js-lru",
   "version": "1.0.0",
   "description": "JS Least-Recently Used Cache",
-  "main": "index.js",
+  "main": "example.js",
   "scripts": {
     "test": "mocha"
   },

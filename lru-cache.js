@@ -3,14 +3,14 @@
 class LRU {
     constructor (options) {
         this.options = options = options || {};
-        options.limit = typeof(options.limit) == 'number' ? options.limit : 5;
+        options.size = typeof(options.size) == 'number' ? options.size : 5;
         this.data = {};
         this.accessOrder = []; //position 0 is most-recent.
     }
     setHead (key) {
         let keyIndex = this.accessOrder.indexOf(key);
         this.accessOrder.unshift(keyIndex > -1 ? this.accessOrder.splice(keyIndex, 1)[0] : key);
-        if (this.accessOrder.length > this.options.limit) delete this.data[this.accessOrder.pop()];
+        if (this.accessOrder.length > this.options.size) delete this.data[this.accessOrder.pop()];
     }
     set (key, value) {
         this.data[key] = value;

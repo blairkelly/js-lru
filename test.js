@@ -27,19 +27,19 @@ describe(`Least Recently-Used Cache`, function() {
             assert.equal(val, undefined);
         });
     });
-    describe(`Cache size limit is respected`, function() {
+    describe(`Cache size is respected`, function() {
         let lru = lruCache();
-        for (let i = 0; i <= (lru.options.limit + 1); i++) {
-            lru.set(`sizelimit-${i}`, {value: i});
+        for (let i = 0; i <= (lru.options.size + 1); i++) {
+            lru.set(`size-${i}`, {value: i});
         }
         it(`Cache is maximum size`, function() {
-            assert.equal(lru.accessOrder.length, lru.options.limit);
-            assert.equal(Object.keys(lru.data).length, lru.options.limit);
+            assert.equal(lru.accessOrder.length, lru.options.size);
+            assert.equal(Object.keys(lru.data).length, lru.options.size);
         });
     });
     describe(`Get and Set re-order cache`, function() {
         let lru = lruCache();
-        for (let i = 0; i <= lru.options.limit; i++) {
+        for (let i = 0; i <= lru.options.size; i++) {
             lru.set(`order-${i}`, {value: i});
         }
         it(`Last-set is most recent`, function() {
